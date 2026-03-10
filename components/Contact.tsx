@@ -31,7 +31,7 @@ const locations = [
 
 export default function ContactLocations() {
   return (
-    <section className="py-16 md:py-24 bg-white dark:bg-black transition-colors duration-300">
+    <section className="py-16 md:py-24 bg-white dark:bg-[#0101] transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           className="border border-black dark:border-[#101010] 
@@ -50,21 +50,21 @@ export default function ContactLocations() {
             >
               {/* Flag */}
               <div
-                className="w-16 h-16 rounded-full 
+                className="w-20 h-20 rounded-full 
                               bg-black 
                               flex items-center justify-center shrink-0 transition-colors"
               >
                 <Image
                   src={location.flag}
                   alt={location.country}
-                  width={48}
-                  height={48}
+                  width={60}
+                  height={60}
                   className="rounded-full"
                 />
               </div>
 
               {/* Content */}
-              <div className="font-medium text-gray-800 dark:text-gray-300 transition-colors">
+              <div className="font-medium  text-gray-800 dark:text-gray-200 transition-colors space-y-1">
                 <h3
                   className="text-lg sm:text-xl font-bold mb-3 
                                text-black dark:text-white"
