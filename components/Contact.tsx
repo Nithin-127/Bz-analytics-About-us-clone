@@ -44,9 +44,9 @@ export default function ContactLocations() {
           {locations.map((location) => (
             <div
               key={location.id}
-              className="flex flex-col sm:flex-row gap-6 
-                         text-center sm:text-left 
-                         items-center sm:items-start"
+              className="flex flex-row sm:flex-row gap-2 
+                         text-start sm:text-left 
+                         items-start sm:items-start"
             >
               {/* Flag */}
               <div

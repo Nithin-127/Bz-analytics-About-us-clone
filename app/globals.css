@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -125,11 +125,13 @@
   }
 }
 
+
 .consultant {
   position: relative;
-  min-height: 50vh;
   width: 100%;
 }
+
+
 
 .bg-img {
   background-image: url("/header-bg.jpg");
@@ -140,6 +142,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
+
 }
 
 .overlay {
@@ -153,4 +156,56 @@
   background-position: bottom center;
   background-image: url("/header-bg-overlay.png");
   z-index: 1;
+}
+
+
+p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 2rem;
+
+}
+
+h1{
+  font-size: 60px;
+  margin: 0;
+}
+
+.intro h2{
+  font-size: 45px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.mobile-menu{
+  display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    height: 46px;
+    align-items: center;
+    transition: 500ms
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .intro h2{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  
+
 }

@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="flex-1 lg:max-w-[750px]">
           
             <div className="mb-8">
-              <p className="mb-2 text-xl font-medium text-white">
+              <p className="mb-2 text-[14px] font-normal text-white">
                 Let&apos;s start working together
               </p>
-              <h2 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-[54px] hover:text-primary">
+              <h2 className="text-4xl font-bold tracking-tight md:text-[30px] lg:text-[54px] hover:text-primary">
                 hello@bzanalytics.ai
               </h2>
             </div>
@@ -43,21 +43,21 @@ export default function Footer() {
                     alt="Bz Analytics Logo"
                     width={280}
                     height={70}
-                    className="h-auto w-full object-contain"
+                    className="h-auto w-[180px] lg:w-full object-contain"
                   />
                 </div>
 
                 {/* Social Icons */}
-                <div className="mt-12 flex items-center gap-5">
+                <div className="mt-22 ms-3 flex flex-wrap justify-start md:justify-start items-center  gap-4">
                   <a
                     href="#"
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-primary"
+                    className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-black transition-all hover:bg-primary"
                   >
-                    <Linkedin className="h-6 w-6 fill-white text-white" />
+                    <Linkedin className="h-5 w-5 fill-white text-white" />
                   </a>
                   <a
                     href="#"
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-primary"
+                    className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-black transition-all hover:bg-primary"
                   >
                     <svg
                       className="h-5 w-5 fill-current text-white"
@@ -69,19 +69,19 @@ export default function Footer() {
                   </a>
                   <a
                     href="#"
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-primary"
+                    className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-black transition-all hover:bg-primary"
                   >
                     <Facebook className="h-6 w-6 fill-white text-white" />
                   </a>
                   <a
                     href="#"
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-primary"
+                    className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-black transition-all hover:bg-primary"
                   >
                     <Instagram className="h-6 w-6 text-white" />
                   </a>
                   <a
                     href="#"
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-primary"
+                    className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-black transition-all hover:bg-primary"
                   >
                     <FaYoutube className="h-6 w-6 text-white" />
                   </a>
@@ -89,29 +89,33 @@ export default function Footer() {
               </div>
 
              
-              <div className="grid grid-cols-2 gap-4 lg:ml-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0.5 lg:ml-8">
                 <div className="flex flex-col gap-4 pt-2">
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary "
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary "
                   >
                     Home
                   </a>
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     About Us
                   </a>
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     Services
                   </a>
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     Success Stories
                   </a>
@@ -119,19 +123,22 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 pt-2">
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     Blogs
                   </a>
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     Careers
                   </a>
                   <a
                     href="#"
-                    className="text-xl font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
+                    style={{lineHeight:'36px'}}
+                    className="text-[16px] font-medium tracking-wide text-gray-300 transition-colors hover:text-primary"
                   >
                     Contact Us
                   </a>

@@ -9,6 +9,9 @@ import { ModeToggle } from "@/components/Toggle";
 import Footer from "@/components/Footer";
 import ContactLocations from "@/components/Contact";
 import PageLoader from "@/components/PageLoader";
+import Navbar from "@/components/Navbar";
+import WhatsAppBtn from "@/components/WhatsAppBtn";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,10 +41,15 @@ export default function RootLayout({
         >
           <ModeToggle />
           <PageLoader>
-            <Header />
+            <Navbar />
+
             <CustomCursor />
+
+            <WhatsAppBtn />
             {children}
+            <ProgressBar />
             <ContactLocations />
+
             <Footer />
           </PageLoader>
         </ThemeProvider>

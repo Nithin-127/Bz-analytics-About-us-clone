@@ -303,7 +303,7 @@ const ConsultationForm = () => {
             </div>
           </div>
           <div className="col-span-1 lg:col-span-2 mt-">
-            <div className="max-w-md dark:bg-[#222] rounded dark:text-white  border border-[#d3d3d3] bg-[#f9f9f9] text-black flex justify-between items-center p-1.5 shadow">
+            <div className="max-w-[300px] h-20 dark:bg-[#222] rounded dark:text-white  border border-[#d3d3d3] bg-[#f9f9f9] text-black flex justify-between items-center p-1.5 shadow">
               {/* checkbox */}
               <div className="flex items-center gap-3">
                 <Checkbox name="captcha" />
@@ -320,10 +320,10 @@ const ConsultationForm = () => {
                   width={40}
                   alt="captcha"
                 />
-                <p>reCAPTCHA</p>
-                <p>
+                <span>reCAPTCHA</span>
+                <span>
                   Privacy <span>-</span> Terms
-                </p>
+                </span>
               </div>
             </div>
           </div>
@@ -332,8 +332,8 @@ const ConsultationForm = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 mt-16 px-4">
           <Button
             type="submit"
-            className="font-bold text-sm sm:text-base md:text-lg 
-                     px-8 sm:px-12 py-4 
+            className="font-bold text-lg sm:text-base md:text-lg 
+                     px-8 sm:px-12 py-4  text-white 
                      hover:bg-white hover:text-primary 
                      transition-all duration-500 
                      hover:border-2 hover:border-black"
@@ -341,9 +341,9 @@ const ConsultationForm = () => {
             Click to Schedule
           </Button>
 
-          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold">
+          <h4 className="text-xl sm:text-2xl md:text-4xl  font-bold">
             Our Team will contact you!
-          </h1>
+          </h4>
         </div>
       </form>
     </section>
