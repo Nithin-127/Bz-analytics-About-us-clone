@@ -1,65 +1,79 @@
-import Image from "next/image";
 
-export default function Home() {
+"use client";
+import React, { useEffect, useState } from 'react';
+import Navbar from '@/components/Navbar';
+import PageHeader from '@/components/PageHeader';
+import AboutSection from '@/components/AboutSection';
+import TeamSection from '@/components/TeamSection';
+import TestimonialSection from '@/components/TestimonialSection';
+import Footer from '@/components/Footer';
+import MobileNav from '@/components/MobileNav';
+import FloatingElements from '@/components/FloatingElements';
+import ThemeToggle from '@/components/ThemeToggle';
+
+export default function AboutPage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // dynamically load the scripts
+    const scriptLinks = [
+      '/assets/vendors/jquery/jquery-3.5.1.min.js',
+      '/assets/vendors/bootstrap/js/bootstrap.bundle.min.js',
+      '/assets/vendors/bootstrap-select/bootstrap-select.min.js',
+      '/assets/vendors/jquery-ui/jquery-ui.js',
+      '/assets/vendors/jarallax/jarallax.min.js',
+      '/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js',
+      '/assets/vendors/jquery-appear/jquery.appear.min.js',
+      '/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js',
+      '/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js',
+      '/assets/vendors/jquery-validate/jquery.validate.min.js',
+      '/assets/vendors/nouislider/nouislider.min.js',
+      '/assets/vendors/odometer/odometer.min.js',
+      '/assets/vendors/tiny-slider/tiny-slider.min.js',
+      '/assets/vendors/owl-carousel/owl.carousel.min.js',
+      '/assets/vendors/wnumb/wNumb.min.js',
+      '/assets/vendors/jquery-circleType/jquery.circleType.js',
+      '/assets/vendors/jquery-lettering/jquery.lettering.min.js',
+      '/assets/vendors/wow/wow.js',
+      '/assets/vendors/isotope/isotope.js',
+      '/assets/vendors/countdown/countdown.min.js',
+      '/assets/vendors/slick/slick.min.js',
+      '/assets/js/ogency.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js',
+      'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js',
+      '/assets/js/footer.js'
+    ];
+
+    let current = 0;
+    function loadNext() {
+      if (current >= scriptLinks.length) return;
+      const s = document.createElement('script');
+      s.src = scriptLinks[current];
+      s.onload = loadNext;
+      document.body.appendChild(s);
+      current++;
+    }
+    loadNext();
+  }, []);
+
+  if (!mounted) return null;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <ThemeToggle />
+      <div className="page-wrapper">
+        <FloatingElements />
+        
+        <Navbar />
+        <PageHeader />
+        <AboutSection />
+        <TeamSection />
+        <TestimonialSection />
+        <Footer />
+        <MobileNav />
+      </div>
+    </>
   );
 }
+
