@@ -1,3 +1,12 @@
+@font-face { 
+    font-family: 'Plus Jakarta Sans'; 
+    font-style: italic; 
+    font-weight: 200; 
+    font-display: swap; 
+    src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yOqhNnZR-AHYA.woff2) format('woff2'); 
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; 
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -1460,55 +1469,147 @@ select:-webkit-autofill {
 # Common
 --------------------------------------------------------------*/
 
-:root {
-    --ogency-font: 'Plus Jakarta Sans', sans-serif;
-    --heading-font: 'Plus Jakarta Sans', sans-serif;
-    --ogency-color: rgb(234, 234, 234);
-    --ogency-color-rgb: 93, 93, 93;
-    --ogency-base: #f5900d;
-    --ogency-base-rgb: 245, 144, 13;
-    --ogency-black: #000000;
-    --ogency-black-rgb: 0, 0, 0;
-    --ogency-black2: #101010;
-    --ogency-black2-rgb: 16, 16, 16;
-    --ogency-black3: #1a1a1a;
-    --ogency-black3-rgb: 26, 26, 26;
-    --ogency-white: #ffffff;
-    --ogency-white-rgb: 255, 255, 255;
-    /* --ogency-black: #ffffff;
-  --ogency-black-rgb: 255, 255, 255;
-  --ogency-white: #ffffff;
-  --ogency-white-rgb: 0, 0, 0;
-  --ogency-black2: #f1f1f1;
-  --ogency-black2-rgb: 241, 241, 241;
-  --ogency-black3: #e1e1e1;
-  --ogency-black3-rgb: 225, 225, 225;
-  --ogency-color: #5d5d5d; */
-}
+:root { 
+    --ogency-font: 'Plus Jakarta Sans', sans-serif; 
+    --heading-font: 'Plus Jakarta Sans', sans-serif; 
+    --ogency-color: rgb(234, 234, 234); 
+    --ogency-color-rgb: 93, 93, 93; 
+    --ogency-base: #f5900d; 
+    --ogency-base-rgb: 245, 144, 13; 
+    --ogency-black: #000000; 
+    --ogency-black-rgb: 0, 0, 0; 
+    --ogency-black2: #101010; 
+    --ogency-black2-rgb: 16, 16, 16; 
+    --ogency-black3: #1a1a1a; 
+    --ogency-black3-rgb: 26, 26, 26; 
+    --ogency-white: #ffffff; 
+    --ogency-white-rgb: 255, 255, 255; 
 
-body {
-    font-family: var(--ogency-font);
-    color: var(--ogency-color);
-    font-size: 15px;
-    line-height: 1.875;
-    font-weight: 500;
-}
+    --bs-blue: #0d6efd; 
+    --bs-indigo: #6610f2; 
+    --bs-purple: #6f42c1; 
+    --bs-pink: #d63384; 
+    --bs-red: #dc3545; 
+    --bs-orange: #fd7e14; 
+    --bs-yellow: #ffc107; 
+    --bs-green: #198754; 
+    --bs-teal: #20c997; 
+    --bs-cyan: #0dcaf0; 
+    --bs-white: #fff; 
+    --bs-gray: #6c757d; 
+    --bs-gray-dark: #343a40; 
+    --bs-primary: #0d6efd; 
+    --bs-secondary: #6c757d; 
+    --bs-success: #198754; 
+    --bs-info: #0dcaf0; 
+    --bs-warning: #ffc107; 
+    --bs-danger: #dc3545; 
+    --bs-light: #f8f9fa; 
+    --bs-dark: #212529; 
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); 
 
-body.locked {
-    overflow: hidden;
-}
+    --fa-style-family-classic: "Font Awesome 6 Free"; 
+    --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free"; 
+    --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Free"; 
+    --fa-style-family-brands: "Font Awesome 6 Brands"; 
+    --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands"; 
+} 
 
-a {
-    color: var(--ogency-base);
-    transition: all 500ms ease;
-}
+body { 
+    margin: 0; 
+    font-family: var(--ogency-font); 
+    color: var(--ogency-color); 
+    font-size: 15px; 
+    line-height: 1.875; 
+    font-weight: 500; 
+    background-color: #fff; 
+    -webkit-text-size-adjust: 100%; 
+    -webkit-tap-highlight-color: transparent; 
+} 
 
-a,
-a:hover,
-a:focus,
-a:visited {
-    text-decoration: none;
-}
+*, ::after, ::before { 
+    box-sizing: border-box; 
+} 
+
+div, p { 
+    letter-spacing: 0.5px; 
+    font-size: 16px; 
+} 
+
+a { 
+    color: #0d6efd; 
+    text-decoration: underline; 
+    transition: all 500ms ease; 
+} 
+
+a, a:hover, a:focus, a:visited { 
+    text-decoration: none; 
+} 
+
+a:-webkit-any-link { 
+    color: -webkit-link; 
+    cursor: pointer; 
+    text-decoration: underline; 
+} 
+
+ul { 
+    list-style-type: disc; 
+} 
+
+.main-menu .main-menu__list, .main-menu .main-menu__list ul, .stricky-header .main-menu__list, .stricky-header .main-menu__list ul { 
+     margin: 0; 
+     padding: 0; 
+     list-style-type: none; 
+     align-items: center; 
+     display: none; 
+ } 
+
+@media (min-width: 1200px) { 
+    .main-menu .main-menu__list, .main-menu .main-menu__list ul, .stricky-header .main-menu__list, .stricky-header .main-menu__list ul { 
+        display: flex; 
+    } 
+} 
+
+.main-menu .main-menu__list>li>a, .stricky-header .main-menu__list>li>a { 
+    font-size: 16px; 
+    display: flex; 
+    align-items: center; 
+    color: var(--ogency-white); 
+    font-weight: 600; 
+    text-transform: capitalize; 
+    position: relative; 
+    transition: all 500ms ease; 
+} 
+
+@media (min-width: 1200px) { 
+    .main-menu .main-menu__list>li>a, .stricky-header .main-menu__list>li>a { 
+        font-size: 14px; 
+        margin: -12px; 
+    } 
+} 
+
+@media (min-width: 1200px) { 
+    .main-menu .main-menu__list>li>a, .stricky-header .main-menu__list>li>a { 
+        font-size: 14px; 
+        margin: 5px; 
+    } 
+} 
+
+.main-menu .main-menu__list>li>a::after, .stricky-header .main-menu__list>li>a::after { 
+    position: absolute; 
+    left: -14px; 
+    top: 0; 
+    bottom: 0; 
+    margin: auto; 
+    width: 5px; 
+    height: 5px; 
+    border-radius: 50px; 
+    content: ''; 
+    background-color: currentColor; 
+} 
+
 
 ::placeholder {
     color: inherit;

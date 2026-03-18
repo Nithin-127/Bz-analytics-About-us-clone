@@ -35,11 +35,11 @@ export default function Navbar() {
           <div className="container-fluid">
 
             {/* Logo */}
-            <div className="main-menu__logo ml-[6px]">
+            <div className="main-menu__logo ml-[17px]">
               <Link href="/home">
                 <img
                   src="/assets/bz/bq.png"
-                  width="150"
+                  width="160"
                   alt="BzAnalytics logo"
                   loading="lazy"
                 />
@@ -48,46 +48,67 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className="main-menu__nav">
-              <ul className="main-menu__list">
+              <ul className="main-menu__list flex items-center gap-3">
 
                 <li className="dropdown">
-                  <Link href="/home" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/home"
+                    className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Home
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/about" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/about"
+       className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     About Us
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/services" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/services"
+                   className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Services
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/portfolio" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/portfolio"
+                   className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Success Stories
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/blogs" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/blogs"
+                    className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Blogs
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/careers" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/careers"
+                    className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Careers
                   </Link>
                 </li>
 
                 <li className="dropdown">
-                  <Link href="/contact" className="font-semibold tracking-wide transition-all duration-300 hover:text-[#f5900d]">
+                  <Link
+                    href="/contact"
+                   className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
+                  >
                     Contact Us
                   </Link>
                 </li>

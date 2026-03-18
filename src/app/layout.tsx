@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "About Us - BzAnalytics",
@@ -17,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <head suppressHydrationWarning>
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/bz/bq.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/bz/favicon.jpg" />
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/bz/favicon.jpg" />
@@ -65,65 +72,64 @@ export default function RootLayout({
 
         {/* Theme styles */}
 
-        <link rel="stylesheet" href="/assets/css/ogency.css?v=2026031307" id="darkTheme" />
-
-        
         <link
-          {...({
-            rel: "stylesheet",
-            href: "/assets/css/ogency-light.css?v=2026031307",
-            id: "lightTheme",
-            disabled: true,
-            suppressHydrationWarning: true,
-          } as any)}
+          rel="stylesheet"
+          href="/assets/css/ogency.css?v=2026031307"
+          id="darkTheme"
+          suppressHydrationWarning
+        />
+
+        <link
+          rel="stylesheet"
+          href="/assets/css/ogency-light.css?v=2026031307"
+          id="lightTheme"
+          {...{ disabled: true }}
+          suppressHydrationWarning
         />
 
         <link
           id="hr-dark"
           href="/assets/css/voice-with-hr-dark.css?v=2026031307"
           rel="stylesheet"
+          suppressHydrationWarning
         />
 
         <link
-          {...({
-            id: "hr-light",
-            href: "/assets/css/voice-with-hr.css?v=2026031307",
-            rel: "stylesheet",
-            disabled: true,
-            suppressHydrationWarning: true,
-          } as any)}
+          id="hr-light"
+          href="/assets/css/voice-with-hr.css?v=2026031307"
+          rel="stylesheet"
+          {...{ disabled: true }}
+          suppressHydrationWarning
         />
 
         <link
           id="theme-dark"
           href="/assets/css/whatsapp-dark.css?v=2026031307"
           rel="stylesheet"
+          suppressHydrationWarning
         />
 
         <link
-          {...({
-            id: "theme-light",
-            href: "/assets/css/whatsapp-light.css?v=2026031307",
-            rel: "stylesheet",
-            disabled: true,
-            suppressHydrationWarning: true,
-          } as any)}
+          id="theme-light"
+          href="/assets/css/whatsapp-light.css?v=2026031307"
+          rel="stylesheet"
+          {...{ disabled: true }}
+          suppressHydrationWarning
         />
 
         <link
           rel="stylesheet"
           href="/assets/css/digital-dark.css?v=2026031307"
           id="dm-darkTheme"
+          suppressHydrationWarning
         />
 
         <link
-          {...({
-            rel: "stylesheet",
-            href: "/assets/css/digital.css?v=2026031307",
-            id: "dm-lightTheme",
-            disabled: true,
-            suppressHydrationWarning: true,
-          } as any)}
+          rel="stylesheet"
+          href="/assets/css/digital.css?v=2026031307"
+          id="dm-lightTheme"
+          {...{ disabled: true }}
+          suppressHydrationWarning
         />
 
         <link rel="stylesheet" href="/assets/3d/style.css" />
@@ -162,7 +168,6 @@ export default function RootLayout({
         ></script>
 
         {/* Theme loader */}
-
         <Script id="theme-loader" strategy="beforeInteractive">
           {`
             (function(){
@@ -184,7 +189,6 @@ export default function RootLayout({
         </Script>
 
         {/* Theme toggler */}
-
         <Script id="theme-toggler" strategy="lazyOnload">
           {`
             window.toggleTheme = function(){
