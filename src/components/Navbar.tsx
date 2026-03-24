@@ -1,171 +1,211 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Button } from "./ui/button";
+import { IoIosArrowForward } from "react-icons/io";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { FaChevronRight } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+import { menuItems } from "@/lib/menu";
 
-export default function Navbar() {
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState({
-    code: "en",
-    label: "EN",
-    flag: "/assets/images/resources/usa.png",
-  });
-
-  const languages = [
-    { code: "en", label: "EN", flag: "/assets/images/resources/usa.png" },
-    { code: "hi", label: "HI", flag: "/assets/images/resources/indiaflag.png" },
-    { code: "ar", label: "AR", flag: "/assets/images/resources/uaeflag.png" },
+const Navbar = () => {
+  const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Success Stories", href: "/success-stories" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
-  const handleLangToggle = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsLangOpen(!isLangOpen);
-  };
+  return (
+   <nav className="w-full border-b bg-[#101010] sticky top-0 z-50">
+      <div className=" flex items-center justify-between px-4 py-4">
+        <div className=" flex items-center justify-between w-full ">
+          {/* mobile menu */}
 
-  const handleLangSelect = (lang: typeof selectedLang, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    setSelectedLang(lang);
-    setIsLangOpen(false);
-  };
-
-  const renderLanguageSelector = () => (
-    <div className="select-container shrink-0">
-      <div className="custom-select-wrapper" onClick={handleLangToggle}>
-        <div className={`custom-select ${isLangOpen ? "open" : ""}`}>
-          <div className="custom-select__trigger notranslate flex items-center justify-between gap-2 !px-3">
-            <span id="selected-lang" className="flag-icon flex items-center gap-1">
-              <img
-                src={selectedLang.flag}
-                alt={selectedLang.label}
-                className="flag-icon-img"
-                loading="lazy"
-              />
-              <span>{selectedLang.label}</span>
-            </span>
-            <div className="arrow1 ml-1 xl:ml-2 shrink-0"></div>
+          {/* logo */}
+          <div className="flex items-center">
+            <img
+              src="https://bzanalytics.ai/assets/bz/bq.png"
+              alt="BZ Analytics"
+              className="w-[150px] lg:w-[140px] h-auto object-contain"
+            />
           </div>
 
-          <div
-            className="custom-options notranslate"
-            style={{ display: isLangOpen ? "block" : "none" }}
-          >
-            {languages.map((lang) => (
-              <div
-                key={lang.code}
-                className="custom-option"
-                onClick={(e) => handleLangSelect(lang, e)}
-                style={{
-                  display: selectedLang.code === lang.code ? "none" : "flex",
-                }}
-              >
-                <img
-                  src={lang.flag}
-                  alt={lang.label}
-                  className="flag-icon-img"
-                  loading="lazy"
-                />{" "}
-                {lang.label}
-              </div>
-            ))}
+          {/* navigation menu */}
+          <div className=" flex items-center justify-center">
+            <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium mr-[25px]">
+              {menuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={` text-white font-[14px] flex items-center gap-2 hover:text-primary transition `}
+                >
+                  <div
+                    className="relative
+after:content-['']
+after:absolute
+after:left-[-14px]
+after:top-0
+after:bottom-0
+after:my-auto
+after:w-[5px]
+after:h-[5px]
+after:rounded-full
+after:bg-current"
+                  >
+                    {item.label}
+                  </div>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="md:ms-100 sm:ms-45  lg:m-0">
+              <NavigationMenu className=" bg-black">
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>
+                      {" "}
+                      <img
+                        src="/En-lan.png"
+                        width={20}
+                        height={20}
+                        alt=""
+                        className="me-2"
+                      />{" "}
+                      EN
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className=" flex flex-col items-start justify-start gap-2 font-normal">
+                        <Button
+                          variant="ghost"
+                          className="flex w-20 items-center font-bold dark:hover:bg-primary  hover:bg-primary cursor-pointer p-3"
+                        >
+                          <img src="/ind.png" width={20} height={20} alt="" />
+                          <p className=" text-[16px] font-medium">HI</p>
+                        </Button>
+
+                        <Button
+                          variant="ghost"
+                          className="flex w-20 items-center hover:bg-primary dark:hover:bg-primary  font-bold cursor-pointer p-3 "
+                        >
+                          <img src="/uae.png" width={20} height={20} alt="" />
+                          <p className=" text-[16px] font-medium">AR</p>
+                        </Button>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+          </div>
+
+          {/* consultant btn */}
+          <div className="hidden lg:block">
+            <button className="px-10 py-[15px] border border-white bg-black text-white hover:bg-white hover:text-primary transition duration-300 text-[16px] font-bold">
+              <Link href={"/consult"}> Schedule a Consultation</Link>
+            </button>
+          </div>
+
+          <div className="lg:hidden">
+            <Sheet>
+              <SheetTrigger>
+                <Menu size={25} className="text-white" />
+              </SheetTrigger>
+
+              <SheetContent className="bg-black" side="left">
+                <SheetHeader>
+                  <SheetTitle>
+                    <img
+                      src="https://bzanalytics.ai/assets/bz/bq.png"
+                      alt="BZ Analytics"
+                      className="w-[85px] h-auto object-contain"
+                    />
+                  </SheetTitle>
+
+                  <div className="flex flex-col gap-4 mt-6">
+                    {menuItems.map((item, i) => (
+                      <Link
+                        href={item.href}
+                        key={i}
+                        className="w-full py-1.5 text-white border-b border-gray-700 font-light text-[12px] flex justify-between items-center"
+                      >
+                        {item.label}
+
+                        <button className="p-2 bg-primary">
+                          <FaChevronRight />
+                        </button>
+                      </Link>
+                    ))}
+                  </div>
+
+                  <div className="">
+                    <button className=" bg-primary w-full text-[11px] text-white font-semibold py-3 px-10">
+                      <Link href={"/consult"}> Schedule a consultation</Link>
+                    </button>
+                    <div className=" flex items-center justify-start gap-x-2 mt-3">
+                      <button className="p-2 bg-primary rounded-full text-white">
+                        <FaEnvelope />{" "}
+                      </button>
+                      <h5 className="text-white font-semibold ">
+                        hello@bzanalytics.ai
+                      </h5>
+                    </div>
+                  </div>
+
+                  <div className=" flex items-center justify-start gap-2">
+                    <button className="p-2 text-white">
+                      <FaLinkedinIn />
+                    </button>
+
+                    <button className="p-2 text-white">
+                      <FaXTwitter />
+                    </button>
+
+                    <button className="p-2 text-white">
+                      <FaFacebook />
+                    </button>
+
+                    <button className="p-2 text-white">
+                      <FaInstagram />
+                    </button>
+
+                    <button className="p-2 text-white">
+                      <FaYoutube />
+                    </button>
+                  </div>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
-
-      <select
-        id="language-select"
-        className="language-selector notranslate"
-        style={{ display: "none" }}
-        value={selectedLang.code}
-        onChange={(e) => {
-          const lang = languages.find((l) => l.code === e.target.value);
-          if (lang) handleLangSelect(lang);
-        }}
-      >
-        <option value="en">EN</option>
-        <option value="hi">HI</option>
-        <option value="ar">AR</option>
-      </select>
-    </div>
+    </nav>
   );
+};
 
-  return (
-    <>
-      <header className="main-header main-header--with-border">
-        <nav className="main-menu w-full relative">
-          
-          {/* 🔥 HEIGHT FIX APPLIED HERE */}
-          <div className="container-fluid flex items-center justify-between w-full h-[60px] lg:h-[70px] py-[6px] !flex-nowrap">
-            
-            {/* LEFT */}
-            <div className="flex-1 flex items-center justify-start shrink-0">
-              <div className="main-menu__logo shrink-0 m-0">
-                <Link href="/home">
-                  <img
-                    src="/assets/bz/bq.png"
-                    width="160"
-                    alt="BzAnalytics logo"
-                    loading="lazy"
-                  />
-                </Link>
-              </div>
-            </div>
-
-            {/* CENTER */}
-            <div className="hidden min-[1200px]:flex items-center justify-center shrink-0 whitespace-nowrap z-[100] px-2 xl:px-4">
-              <div className="main-menu__nav">
-                <ul className="main-menu__list min-[1200px]:flex min-[1200px]:items-center min-[1200px]:justify-center min-[1200px]:gap-3 xl:gap-6 m-0 p-0">
-                  
-                  {["Home","About Us","Services","Success Stories","Blogs","Careers","Contact Us"].map((item, i) => (
-                    <li key={i} className="dropdown min-[1200px]:shrink-0">
-                      <Link
-                        href={`/${item.toLowerCase().replace(/ /g, "")}`}
-                        className="text-lg font-bold tracking-wide no-underline transition-all duration-300 hover:text-[#f5900d]"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  ))}
-
-                </ul>
-              </div>
-            </div>
-
-            {/* RIGHT */}
-            <div className="flex-1 flex items-center min-[1200px]:justify-between max-[1199px]:justify-end flex-nowrap shrink-0 max-[1199px]:gap-4">
-              
-              <div className="flex items-center shrink-0">
-                <div id="google_translate_element" className="hidden sm:block shrink-0 mr-2 xl:mr-4"></div>
-                {renderLanguageSelector()}
-              </div>
-
-              {/* 🔥 BUTTON HEIGHT FIX */}
-              <div className="hidden min-[1200px]:flex main-menu__right items-center shrink-0">
-                <Link href="/consult" className="shrink-0">
-                  <button className="schedule-consultation ogency-btn px-10 lg:px-16 !h-[50px] lg:!h-[60px] !py-0 flex items-center justify-center text-[14px] lg:text-[17px] font-bold whitespace-nowrap tracking-wide">
-                    Schedule a consultation
-                  </button>
-                </Link>
-              </div>
-
-              {/* MOBILE */}
-              <a href="#" className="main-menu__toggler mobile-nav__toggler min-[1200px]:hidden ml-6 lg:ml-8 flex items-center justify-center shrink-0 h-[40px] w-[40px]">
-                <i className="fa fa-bars text-3xl m-0 p-0 leading-none flex items-center"></i>
-              </a>
-
-            </div>
-
-          </div>
-        </nav>
-      </header>
-
-      {/* Sticky Header */}
-      <div className="stricky-header stricked-menu main-menu">
-        <div className="sticky-header__content"></div>
-      </div>
-
-      <div className="stricky-header stricked-menu main-menu">
-        <div className="sticky-header__content"></div>
-      </div>
-    </>
-  );
-}
+export default Navbar;
