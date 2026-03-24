@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useTheme } from "next-themes";
 
 type FormState = {
   errors: {
@@ -54,6 +55,7 @@ const validateForm = async (
 
 const ConsultationForm = () => {
   const [state, formAction] = useActionState(validateForm, { errors: {} });
+  const { theme, setTheme } = useTheme();
   return (
     <section className="py-10 px-4">
       <form action={formAction}>
@@ -313,8 +315,13 @@ const ConsultationForm = () => {
           </div>
           <div className="col-span-1 lg:col-span-2 mt-">
             {/* captcha logo */}
+
             <div className="">
-              <ReCAPTCHA theme="dark" sitekey="6Le9lpQsAAAAAO0h298D3eJDXb65MTkU3C-pa-uz" />
+              <ReCAPTCHA
+                key={theme}
+                theme={theme === "dark" ? "dark" : "light"}
+                sitekey="6Le9lpQsAAAAAO0h298D3eJDXb65MTkU3C-pa-uz"
+              />
             </div>
           </div>
         </div>

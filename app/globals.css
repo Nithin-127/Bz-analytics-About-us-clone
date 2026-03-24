@@ -168,10 +168,6 @@ p {
 
 }
 
-h1{
-  font-size: 60px;
-  margin: 0;
-}
 
 .intro h2{
   font-size: 45px;
@@ -196,14 +192,23 @@ Input {
 border: none;
 }
 
+.bounce {
+  animation: movebounce 3s linear infinite;
+}
 
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 40px;
-    margin: 0;
+@keyframes movebounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
+
+
 
 @media (max-width: 767px) {
   h2 {
