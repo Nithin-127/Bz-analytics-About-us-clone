@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaDotCircle } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { RxDotFilled } from "react-icons/rx";
+import Marquee from "react-fast-marquee";
 
 type Slide = {
   img: string;
@@ -71,9 +72,33 @@ const Home = () => {
                 {homeSlide[currentIndex].subtitle}
               </p>
 
-              <Button className="text-white font-bold px-8 sm:px-10 md:px-15 py-3 sm:py-4 md:py-5 text-lg">
-                {homeSlide[currentIndex].btn}
-              </Button>
+              <button
+                className="relative inline-flex items-center justify-center 
+             px-6 sm:px-8 lg:px-10 py-3 sm:py-4
+             bg-primary 
+             overflow-hidden group cursor-pointer"
+              >
+                {/* Animated background */}
+                <span
+                  className="absolute top-1/2 left-1/2 
+               w-[300%] h-[300%] sm:w-[400%] sm:h-[400%]
+               bg-white 
+               -translate-x-1/2 -translate-y-1/2 rotate-45
+               scale-0 group-hover:scale-100
+               transition-transform duration-500 ease-out"
+                ></span>
+
+                {/* Text */}
+                <span
+                  className="relative z-10 
+               text-white group-hover:text-primary
+               transition-colors duration-300 
+               font-bold sm:font-extrabold
+               text-sm sm:text-base lg:text-[17px]"
+                >
+                  {homeSlide[currentIndex].btn}
+                </span>
+              </button>
             </div>
 
             <div className="absolute bottom-2/5 lg:right-40 right-5 flex flex-col gap-3">
@@ -94,39 +119,38 @@ const Home = () => {
       </section>
 
       {/* infinite caraousal */}
-      <section className="bg-black text-white">
-        <div className="carousal w-full overflow-x-auto">
-          <div className="group1 flex w-full">
-            <div className="inline-block min-w-[80%] sm:min-w-full md:min-w-[50%] lg:min-w-[40%] py-3 font-semibold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px]">
-              <p className="text-[14px]  sm:text-[16px] md:text-3xl   font-semibold">
-                Unlocking Your Full Potential
-              </p>
-            </div>
-
-            <div className="inline-block min-w-[80%] sm:min-w-full md:min-w-[50%] lg:min-w-[40%] py-3 font-semibold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px]">
-              <p className=" text-[14px] sm:text-[16px] md:text-3xl   font-semibold">
-                Turning Concepts into Reality
-              </p>
-            </div>
-
-            <div className="inline-block min-w-[80%] sm:min-w-full md:min-w-[50%] lg:min-w-[40%] py-3 font-semibold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px]">
-              <p className=" text-[14px] sm:text-[16px] md:text-3xl   font-semibold">
-                Cultivating Creativity
-              </p>
-            </div>
-
-            <div className="inline-block min-w-[80%] sm:min-w-full md:min-w-[50%] lg:min-w-[40%] py-3 font-semibold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px]">
-              <p className=" text-[14px] sm:text-[16px] md:text-3xl   font-semibold">
-                Expertise in Design & Development
-              </p>
-            </div>
-
-            <div className="inline-block min-w-[80%] sm:min-w-full md:min-w-[50%] lg:min-w-[40%] py-3 font-semibold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[30px]">
-              <p className=" text-[14px] sm:text-[16px] md:text-3xl   font-semibold">
-                Mastery in Design & Development
-              </p>
-            </div>
-          </div>
+      <section className="">
+        <div className="bg-[#101010] p-5   font-semibold text-white text-xl ">
+          <Marquee gradient={false} speed={50} pauseOnHover={true}>
+            <span className="mr-10 tracking-wider">
+              UNLOCKING YOUR FULL POTENTIAL
+            </span>
+            <span className="mr-10 tracking-wider">
+              TURNING CONCEPTS INTO REALITY
+            </span>
+            <span className="mr-10 tracking-wider">CULTIVATING CREATIVITY</span>
+            <span className="mr-10 tracking-wider">
+              EXPERTISE IN DESIGN AND DEVELOPMENT
+            </span>
+            <span className="mr-10 tracking-wider">
+              REALIZING YOUR HIDDEN POTENTIAL
+            </span>
+            <span className="mr-10 tracking-wider">
+              TRANSFORMING VISIONS INTO REALITY
+            </span>
+            <span className="mr-10 tracking-wider">
+              FOSTERING CREATIVE INSPIRATION
+            </span>
+            <span className="mr-10 tracking-wider">
+              CRAFTING IN DESIGN AND DEVELOPMENT
+            </span>
+            <span className="mr-10 tracking-wider">
+              UNLEASHING YOUR MAXIMUM POTENTIAL
+            </span>
+            <span className="mr-10 tracking-wider">
+              LET'S START WORKING TOGETHER
+            </span>
+          </Marquee>
         </div>
       </section>
 
